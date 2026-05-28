@@ -78,6 +78,7 @@ export const navLinks: NavLink[] = [
   { label: "Projects", href: "#projects" },
   { label: "Process", href: "#process" },
   { label: "Skills", href: "#skills" },
+  { label: "Proof", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -90,10 +91,10 @@ export const personalInfo = {
   tagline: "Building modern web solutions for businesses.",
   supportingLine:
     "I help PT, CV, and individual businesses turn ideas into fast, clean, and useful digital products.",
-  email: "zikorizqillah@gmail.com",
-  whatsapp: "+6281234567890", // Replace with real number
-  linkedin: "https://linkedin.com/in/zikorizqillah", // Replace with real URL
-  github: "https://github.com/zikorizqillah", // Replace with real URL
+  email: "zikowakbar@gmail.com",
+  whatsapp: "+6282144471727",
+  linkedin: "https://linkedin.com/in/zikorizqillah",
+  github: "https://github.com/jikoo123",
   location: "Indonesia",
 };
 
@@ -101,9 +102,9 @@ export const personalInfo = {
 
 export const trustMetrics: TrustMetric[] = [
   { value: 2, suffix: "+", label: "Projects Delivered" },
-  { value: 1, suffix: "", label: "System Still in Active Use" },
-  { value: 100, suffix: "%", label: "Client-Focused Approach" },
-  { value: 1, suffix: "", label: "End-to-End Development" },
+  { value: 1, suffix: "", label: "System in Production" },
+  { value: 5, suffix: "", label: "Step Delivery Process" },
+  { value: 1, suffix: "", label: "End-to-End Ownership" },
 ];
 
 // ─── About ───────────────────────────────────────────────────────────────────
@@ -208,7 +209,6 @@ export const projects: Project[] = [
     featured: false,
     liveUrl: undefined,
     caseStudyUrl: undefined,
-    // NOTE: Replace this placeholder with a real project when ready
   },
 ];
 

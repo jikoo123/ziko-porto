@@ -1,25 +1,33 @@
-import { type ClassValue } from "clsx";
+export type ClassValue =
+  | string
+  | number
+  | null
+  | undefined
+  | false
+  | ClassValue[];
 
-/**
- * Merge class names conditionally. Lightweight alternative to clsx + tailwind-merge.
- */
 export function cn(...inputs: ClassValue[]): string {
-  return inputs.filter(Boolean).join(" ");
+  const out: string[] = [];
+
+  const walk = (v: ClassValue) => {
+    if (!v) return;
+    if (Array.isArray(v)) {
+      for (const item of v) walk(item);
+      return;
+    }
+    out.push(String(v));
+  };
+
+  for (const input of inputs) walk(input);
+  return out.join(" ");
 }
 
-/**
- * Smooth scroll to an element by ID
- */
 export function scrollToSection(id: string): void {
   const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  if (!element) return;
+  element.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-/**
- * Format a number with a suffix (e.g., 2+ )
- */
 export function formatMetric(value: number, suffix: string = ""): string {
   return `${value}${suffix}`;
 }
