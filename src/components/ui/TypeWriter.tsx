@@ -50,8 +50,11 @@ export default function TypeWriter({
     }
 
     if (isDeleting && charIndex === 0) {
-      setIsDeleting(false);
-      setTextIndex((textIndex + 1) % texts.length);
+      const timeout = setTimeout(() => {
+        setIsDeleting(false);
+        setTextIndex((textIndex + 1) % texts.length);
+      }, 0);
+      return () => clearTimeout(timeout);
     }
   }, [charIndex, isDeleting, textIndex, texts, speed, deleteSpeed, pauseDuration]);
 
